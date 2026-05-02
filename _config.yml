@@ -1,0 +1,54 @@
+title: jhyde
+description: "Books, frameworks, and tools that have shaped how I work."
+url: "https://jandhyde.com"
+baseurl: ""
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  auto_ids: true
+  syntax_highlighter: none
+
+permalink: /:slug/
+
+collections:
+  books:
+    output: true
+    permalink: /library/:slug/
+  frameworks:
+    output: true
+    permalink: /frameworks/:slug/
+  channels:
+    output: true
+    permalink: /watching/:slug/
+
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+  - scope:
+      path: "_posts"
+      type: "posts"
+    values:
+      layout: "post"
+      permalink: /notes/:title/
+  - scope:
+      path: ""
+      type: "books"
+    values:
+      layout: "entry"
+  - scope:
+      path: ""
+      type: "frameworks"
+    values:
+      layout: "entry"
+  - scope:
+      path: ""
+      type: "channels"
+    values:
+      layout: "entry"
+
+plugins:
+  - jekyll-seo-tag

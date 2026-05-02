@@ -1,0 +1,35 @@
+---
+layout: default
+---
+
+<section class="hero">
+  <div class="container">
+    <h1 class="hero-name">Jonathan Hyde</h1>
+    <p class="hero-intro">{{ content }}</p>
+  </div>
+</section>
+
+{% assign all_entries = site.books | concat: site.frameworks | concat: site.channels %}
+{% assign sorted_entries = all_entries | sort: "date_added" | reverse %}
+
+{% if sorted_entries.size > 0 %}
+<section class="recent">
+  <div class="container">
+    <h2 class="section-label">Recently added</h2>
+    <ul class="entry-list">
+      {% for entry in sorted_entries limit:5 %}
+      <li class="entry-row">
+        <a href="{{ entry.url | relative_url }}" class="entry-link">
+          <span class="entry-title">{{ entry.title }}</span>
+          <span class="entry-oneline">{{ entry.one_line }}</span>
+          <span class="entry-meta">
+            {% for tag in entry.tags %}<span class="tag">{{ tag }}</span>{% endfor %}
+            <span class="entry-date">{{ entry.date_added | date: "%b %Y" }}</span>
+          </span>
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+{% endif %}

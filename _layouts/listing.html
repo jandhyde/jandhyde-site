@@ -1,0 +1,42 @@
+---
+layout: default
+---
+
+<section class="listing">
+  <div class="container">
+    <h1 class="section-label">{{ page.title }}</h1>
+    {% if page.description %}
+    <p class="listing-intro">{{ page.description }}</p>
+    {% endif %}
+
+    {{ content }}
+
+    {% if page.collection == "posts" %}
+      {% assign items = site.posts %}
+    {% else %}
+      {% assign items = site[page.collection] | sort: "date_added" | reverse %}
+    {% endif %}
+    {% if items.size > 0 %}
+    <ul class="entry-list">
+      {% for item in items %}
+      <li class="entry-row">
+        <a href="{{ item.url | relative_url }}" class="entry-link">
+          <span class="entry-title">{{ item.title }}</span>
+          <span class="entry-oneline">{{ item.one_line }}</span>
+          <span class="entry-meta">
+            {% for tag in item.tags %}<span class="tag">{{ tag }}</span>{% endfor %}
+            {% if item.date_added %}
+            <span class="entry-date">{{ item.date_added | date: "%b %Y" }}</span>
+            {% else %}
+            <span class="entry-date">{{ item.date | date: "%b %Y" }}</span>
+            {% endif %}
+          </span>
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+    {% else %}
+    <p class="listing-empty">Nothing here yet.</p>
+    {% endif %}
+  </div>
+</section>

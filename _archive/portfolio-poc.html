@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <script>document.documentElement.classList.remove('no-js');</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jonathan Hyde — Revenue Operations</title>
+  <meta name="description" content="Jonathan Hyde — RevOps leader who builds churn forecasting models, CRM cleanup systems, and revenue infrastructure from scratch. 7+ years in SaaS.">
+  <link rel="canonical" href="https://jandhyde.com">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://jandhyde.com">
+  <meta property="og:title" content="Jonathan Hyde — Revenue Operations">
+  <meta property="og:description" content="RevOps leader who builds churn forecasting models, CRM cleanup systems, and revenue infrastructure from scratch. 7+ years in SaaS.">
+  <meta property="og:site_name" content="Jonathan Hyde">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    /* === Reset & Base === */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body {
+      background-color: #0a0a0a;
+      font-family: 'Inter', system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      color: #fff;
+      line-height: 1.5;
+    }
+    a { color: inherit; text-decoration: inherit; }
+    h1, h2, h3 { font-size: inherit; font-weight: inherit; }
+    ul { list-style: none; }
+    img, svg { display: block; max-width: 100%; }
+
+    /* === Custom Colors === */
+    /* green-accent: #00FF41 */
+    /* dark-900: #0a0a0a, dark-800: #141414, dark-700: #1a1a1a, dark-600: #222222 */
+    /* gray-300: #d1d5db, gray-400: #9ca3af, gray-600: #4b5563 */
+
+    /* === Layout === */
+    .fixed { position: fixed; }
+    .top-0 { top: 0; }
+    .z-50 { z-index: 50; }
+    .w-full { width: 100%; }
+    .flex { display: flex; }
+    .grid { display: grid; }
+    .items-center { align-items: center; }
+    .items-baseline { align-items: baseline; }
+    .justify-between { justify-content: space-between; }
+    .mx-auto { margin-left: auto; margin-right: auto; }
+    .text-center { text-align: center; }
+
+    /* === Spacing === */
+    .p-6 { padding: 1.5rem; }
+    .px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
+    .py-4 { padding-top: 1rem; padding-bottom: 1rem; }
+    .py-8 { padding-top: 2rem; padding-bottom: 2rem; }
+    .py-24 { padding-top: 6rem; padding-bottom: 6rem; }
+    .pt-20 { padding-top: 5rem; }
+    .mb-2 { margin-bottom: 0.5rem; }
+    .mb-3 { margin-bottom: 0.75rem; }
+    .mb-6 { margin-bottom: 1.5rem; }
+    .mb-8 { margin-bottom: 2rem; }
+    .mb-10 { margin-bottom: 2.5rem; }
+    .mb-12 { margin-bottom: 3rem; }
+    .gap-3 { gap: 0.75rem; }
+    .gap-5 { gap: 1.25rem; }
+    .gap-8 { gap: 2rem; }
+    .space-y-4 > * + * { margin-top: 1rem; }
+    .space-y-5 > * + * { margin-top: 1.25rem; }
+
+    /* === Sizing === */
+    .max-w-2xl { max-width: 42rem; }
+    .max-w-3xl { max-width: 48rem; }
+    .max-w-4xl { max-width: 56rem; }
+    .max-w-6xl { max-width: 72rem; }
+    .min-h-\[85vh\] { min-height: 85vh; }
+
+    /* === Grid === */
+    .grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+
+    /* === Typography === */
+    .font-mono { font-family: 'JetBrains Mono', monospace; }
+    .font-medium { font-weight: 500; }
+    .font-semibold { font-weight: 600; }
+    .font-bold { font-weight: 700; }
+    .font-extrabold { font-weight: 800; }
+    .text-xs { font-size: 0.75rem; line-height: 1rem; }
+    .text-sm { font-size: 0.875rem; line-height: 1.25rem; }
+    .text-base { font-size: 1rem; line-height: 1.5rem; }
+    .text-lg { font-size: 1.125rem; line-height: 1.75rem; }
+    .text-xl { font-size: 1.25rem; line-height: 1.75rem; }
+    .text-4xl { font-size: 2.25rem; line-height: 2.5rem; }
+    .leading-tight { line-height: 1.25; }
+    .leading-relaxed { line-height: 1.625; }
+    .tracking-tight { letter-spacing: -0.025em; }
+    .tracking-wide { letter-spacing: 0.025em; }
+    .tracking-widest { letter-spacing: 0.1em; }
+    .uppercase { text-transform: uppercase; }
+
+    /* === Colors === */
+    .text-white { color: #fff; }
+    .text-gray-300 { color: #d1d5db; }
+    .text-gray-400 { color: #9ca3af; }
+    .text-gray-600 { color: #4b5563; }
+    .text-green-accent { color: #00FF41; }
+
+    /* === Backgrounds & Borders === */
+    .bg-dark-900\/80 { background-color: rgba(10, 10, 10, 0.8); }
+    .backdrop-blur-md { -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); }
+    .border-b { border-bottom: 1px solid; }
+    .border-t { border-top: 1px solid; }
+    .border-dark-600 { border-color: #222222; }
+    .rounded-lg { border-radius: 0.5rem; }
+
+    /* === Card === */
+    .card {
+      background: #141414;
+      border: 1px solid #222222;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      border-color: #00FF41;
+      box-shadow: 0 0 20px rgba(0, 255, 65, 0.07);
+    }
+
+    /* === Metric === */
+    .metric {
+      font-family: 'JetBrains Mono', monospace;
+      color: #00FF41;
+      line-height: 1.1;
+    }
+
+    /* === Animations === */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .no-js .fade-up {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* === Nav links === */
+    nav a { transition: color 0.2s ease; }
+    nav a:hover { color: #00FF41; }
+
+    /* === Contact links === */
+    .contact-link {
+      color: #00FF41;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s ease;
+    }
+    .contact-link:hover {
+      border-bottom-color: #00FF41;
+    }
+
+    /* === Scrollbar === */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0a0a0a; }
+    ::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
+
+    /* === Responsive: sm (640px+) === */
+    @media (min-width: 640px) {
+      .sm\:text-2xl { font-size: 1.5rem; line-height: 2rem; }
+      .sm\:text-5xl { font-size: 3rem; line-height: 1; }
+    }
+
+    /* === Responsive: md (768px+) === */
+    @media (min-width: 768px) {
+      .md\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .md\:text-6xl { font-size: 3.75rem; line-height: 1; }
+      .md\:text-\[1\.7rem\] { font-size: 1.7rem; }
+    }
+
+    /* === Responsive: lg (1024px+) === */
+    @media (min-width: 1024px) {
+      .lg\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    }
+  </style>
+</head>
+<body class="text-white">
+
+  <!-- NAV -->
+  <nav class="fixed top-0 w-full z-50 bg-dark-900/80 backdrop-blur-md border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <span class="font-mono font-bold text-sm tracking-wide text-green-accent">jhyde</span>
+      <div class="flex gap-8 text-sm text-gray-400">
+        <a href="#results">Results</a>
+        <a href="#about">About</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="min-h-[85vh] flex items-center pt-20">
+    <div class="max-w-4xl mx-auto px-6">
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight tracking-tight mb-6">
+        Jonathan Hyde
+      </h1>
+      <p class="text-xl sm:text-2xl md:text-[1.7rem] text-gray-300 leading-relaxed max-w-3xl mb-8 font-medium">
+        I turn messy, inherited problems into structured systems that other people can run without me.
+      </p>
+      <p class="text-base text-gray-300 leading-relaxed max-w-2xl">
+        Seven-plus years building revenue operations infrastructure across SaaS — customer success, sales ops, and RevOps. I specialize in walking into ambiguity, figuring out what's actually broken, and building the systems, processes, and dashboards that make the problem legible and solvable. The work I'm proudest of started with nothing — no process, no data, no playbook — and ended with something the team could run without me.
+      </p>
+    </div>
+  </section>
+
+  <!-- RESULTS -->
+  <section id="results" class="py-24">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-sm font-mono font-medium text-green-accent tracking-widest uppercase mb-12">Results</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+
+        <!-- Card 1: 231 days -->
+        <article class="card rounded-lg p-6 fade-up">
+          <p class="metric text-4xl font-bold mb-3">231 days</p>
+          <h3 class="text-white font-semibold text-lg mb-2">Avg churn lead time</h3>
+          <p class="text-gray-300 text-sm leading-relaxed">
+            Built a churn forecasting model that pre-identified 65% of quarterly losses before they happened. Shifted retention from reactive firefighting to planned saves with over 7 months of advance warning.
+          </p>
+        </article>
+
+        <!-- Card 2: 96-98% -->
+        <article class="card rounded-lg p-6 fade-up">
+          <p class="metric text-4xl font-bold mb-3">96–98%</p>
+          <h3 class="text-white font-semibold text-lg mb-2">Retention across 4 years</h3>
+          <p class="text-gray-300 text-sm leading-relaxed">
+            Managed enterprise SaaS portfolio through a major acquisition and 8-company merger. Built the customer success processes still in operational use today.
+          </p>
+        </article>
+
+        <!-- Card 3: $74M -->
+        <article class="card rounded-lg p-6 fade-up">
+          <p class="metric text-4xl font-bold mb-3">$74M</p>
+          <h3 class="text-white font-semibold text-lg mb-2">ARR run through a targeting engine</h3>
+          <p class="text-gray-300 text-sm leading-relaxed">
+            Built ICP scoring model with play codes, rules of engagement, and product-level segmentation across 1,300+ accounts. Identified $16M in high-viability conversion targets. Approved by executive leadership on first presentation and now used as the basis for territory assignments and partner motions.
+          </p>
+        </article>
+
+        <!-- Card 4: ~$4M -->
+        <article class="card rounded-lg p-6 fade-up">
+          <p class="metric text-4xl font-bold mb-3">~$4M</p>
+          <h3 class="text-white font-semibold text-lg mb-2">Conversion pipeline built and activated</h3>
+          <p class="text-gray-300 text-sm leading-relaxed">
+            Built a 1,200-account customer matrix with play codes, at-risk overlays, and exclusion logic. Filtered to a 472-account global target list that became the foundation for the company's partner-led end-of-life conversion motion. Head of Partnerships built his entire channel strategy on top of it.
+          </p>
+        </article>
+
+        <!-- Card 5: 88 accounts -->
+        <article class="card rounded-lg p-6 fade-up">
+          <p class="metric text-4xl font-bold mb-3">88 accounts</p>
+          <h3 class="text-white font-semibold text-lg mb-2">Renewal blind spots surfaced</h3>
+          <p class="text-gray-300 text-sm leading-relaxed">
+            Built risk registry and activity-tracking dashboards that revealed 88 accounts renewing that quarter with zero engagement in over a year. Process surfaced previously invisible churn risk — leadership reframed the worse-looking numbers as a visibility win, not a performance regression.
+          </p>
+        </article>
+
+        <!-- Card 6: From zero -->
+        <article class="card rounded-lg p-6 fade-up">
+          <p class="metric text-4xl font-bold mb-3">From zero</p>
+          <h3 class="text-white font-semibold text-lg mb-2">Retention function stood up</h3>
+          <p class="text-gray-300 text-sm leading-relaxed">
+            Designed comp model with GRR kickers, risk registry dashboards, currency-filter fix that made gross retention measurable for the first time, and renewals SOP. Built the documentation that the VP of Customer Experience used to survive a 90-minute PE-style operational review.
+          </p>
+        </article>
+
+        <!-- Card 7: 2× close rate -->
+        <article class="card rounded-lg p-6 fade-up">
+          <p class="metric text-4xl font-bold mb-3">2×</p>
+          <h3 class="text-white font-semibold text-lg mb-2">Close rate, same revenue, half the pipeline</h3>
+          <p class="text-gray-300 text-sm leading-relaxed">
+            Year-over-year comparison: 70 opportunities down to 24 with the same revenue output. Pipeline quality improved enough that the team closed more from less — without adding headcount or changing the product.
+          </p>
+        </article>
+
+        <!-- Card 8: 5,100 → 700 -->
+        <article class="card rounded-lg p-6 fade-up">
+          <p class="metric text-4xl font-bold mb-3">5,100 → 700</p>
+          <h3 class="text-white font-semibold text-lg mb-2">CRM territory cleaned</h3>
+          <p class="text-gray-300 text-sm leading-relaxed">
+            Reduced a bloated CRM territory to 700 qualified, confirmed-buyer accounts by identifying duplicates, defunct companies, and non-viable prospects. SDR qualified meetings jumped 5x — from 2 to 10 per month. Team became top outbound performers company-wide.
+          </p>
+        </article>
+
+        <!-- Card 9: Months → 2 days -->
+        <article class="card rounded-lg p-6 fade-up">
+          <p class="metric text-4xl font-bold mb-3">Months → 2 days</p>
+          <h3 class="text-white font-semibold text-lg mb-2">Data migration automated</h3>
+          <p class="text-gray-300 text-sm leading-relaxed">
+            Automated data migration during an 8-company merger that was originally scoped as a months-long manual effort.
+          </p>
+        </article>
+
+        <!-- Card 10: 90 days -->
+        <article class="card rounded-lg p-6 fade-up">
+          <p class="metric text-4xl font-bold mb-3">90 days</p>
+          <h3 class="text-white font-semibold text-lg mb-2">New hire ramp to independent execution</h3>
+          <p class="text-gray-300 text-sm leading-relaxed">
+            Designed playbooks, onboarding docs, and engagement matrices across 4 legacy product lines post-8-company merger — none of which had existing documentation. Two new hires executing renewals independently within 90 days.
+          </p>
+        </article>
+
+        <!-- Card 11: 6 SDRs -->
+        <article class="card rounded-lg p-6 fade-up">
+          <p class="metric text-4xl font-bold mb-3">6 SDRs</p>
+          <h3 class="text-white font-semibold text-lg mb-2">Trained, 100% promoted</h3>
+          <p class="text-gray-300 text-sm leading-relaxed">
+            Only SDRs promoted company-wide in a 2-year period. Built the enablement approach that got them there.
+          </p>
+        </article>
+
+        <!-- Card 12: 3 countries -->
+        <article class="card rounded-lg p-6 fade-up">
+          <p class="metric text-4xl font-bold mb-3">3 countries</p>
+          <h3 class="text-white font-semibold text-lg mb-2">Retention team managed across US, Belgium, India</h3>
+          <p class="text-gray-300 text-sm leading-relaxed">
+            Built individual development plans, ran performance management under foreign labor law constraints, and designed account assignments balancing conversion opportunity with at-risk weighting across geographies and time zones.
+          </p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="py-24 border-t border-dark-600">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="text-sm font-mono font-medium text-green-accent tracking-widest uppercase mb-10">About</h2>
+      <div class="text-gray-300 leading-relaxed space-y-5 text-base">
+        <p>
+          When I look at a problem, I'm usually more interested in why it keeps happening than in fixing it this one time. The fix matters, but the system that prevents it from recurring is where the real value is. I'd rather build the thing that fixes the thing.
+        </p>
+        <p>
+          Most of my career has been spent in the space between departments — where data gets lost, handoffs break down, and nobody owns the process. That space is where the highest-leverage work usually is, and it's where I'm most comfortable.
+        </p>
+        <p>
+          I build in Salesforce, learn by doing, and default to whatever format makes the decision easier for the person who needs to make it. A useful deliverable on Tuesday beats a polished deck on Friday.
+        </p>
+        <p>
+          I also built <a href="https://hydemind.com" class="contact-link" target="_blank" rel="noopener noreferrer">HydeMind</a> — an open-source approach to learning RevOps, curating what you actually need to know and where to start.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section id="certifications" class="py-24 border-t border-dark-600">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-sm font-mono font-medium text-green-accent tracking-widest uppercase mb-12">Certifications</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+
+        <article class="card rounded-lg p-6 fade-up">
+          <p class="metric text-4xl font-bold mb-3">Salesforce</p>
+          <h3 class="text-white font-semibold text-lg mb-2">Certified Administrator</h3>
+          <p class="text-gray-300 text-sm leading-relaxed">
+            Built custom reports and dashboards used by C-level and VP leadership for pipeline and retention visibility.
+          </p>
+        </article>
+
+        <article class="card rounded-lg p-6 fade-up">
+          <p class="metric text-4xl font-bold mb-3">HubSpot</p>
+          <h3 class="text-white font-semibold text-lg mb-2">Revenue Operations</h3>
+          <p class="text-gray-300 text-sm leading-relaxed">
+            End-to-end RevOps methodology — aligning marketing, sales, and customer success data into a unified revenue engine.
+          </p>
+        </article>
+
+        <article class="card rounded-lg p-6 fade-up">
+          <p class="metric text-4xl font-bold mb-3">Pathstream</p>
+          <h3 class="text-white font-semibold text-lg mb-2">Sales Ops w/ Salesforce</h3>
+          <p class="text-gray-300 text-sm leading-relaxed">
+            Applied sales operations workflows — pipeline management, forecasting configuration, and territory design inside Salesforce.
+          </p>
+        </article>
+
+        <article class="card rounded-lg p-6 fade-up">
+          <p class="metric text-4xl font-bold mb-3">SAP</p>
+          <h3 class="text-white font-semibold text-lg mb-2">Generative AI</h3>
+          <p class="text-gray-300 text-sm leading-relaxed">
+            Foundations of generative AI applied to enterprise business processes and operational decision-making.
+          </p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="py-24 border-t border-dark-600">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="text-sm font-mono font-medium text-green-accent tracking-widest uppercase mb-10">Contact</h2>
+      <div class="text-lg">
+        <a href="https://www.linkedin.com/in/jandhyde" class="contact-link" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-8 border-t border-dark-600">
+    <div class="max-w-6xl mx-auto px-6 text-center text-gray-600 text-xs">
+      &copy; 2026 Jonathan Hyde
+    </div>
+  </footer>
+
+  <!-- Scroll animation -->
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>

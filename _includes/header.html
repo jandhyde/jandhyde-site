@@ -1,0 +1,15 @@
+<header class="site-header">
+  <nav class="site-nav container">
+    <a href="/" class="wordmark">jhyde</a>
+    <div class="nav-links">
+      <a href="/library/" class="nav-link{% if page.url contains '/library' %} active{% endif %}">Library</a>
+      <a href="/frameworks/" class="nav-link{% if page.url contains '/frameworks' %} active{% endif %}">Frameworks</a>
+      <a href="/watching/" class="nav-link{% if page.url contains '/watching' %} active{% endif %}">Watching</a>
+      <a href="/notes/" class="nav-link{% if page.url contains '/notes' %} active{% endif %}">Notes</a>
+      <a href="/about/" class="nav-link{% if page.url contains '/about' %} active{% endif %}">About</a>
+    </div>
+    <button class="nav-toggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+</header>
