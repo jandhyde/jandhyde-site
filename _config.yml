@@ -1,7 +1,7 @@
 title: jhyde
 description: "Books, frameworks, and tools that have shaped how I work."
-url: "https://jandhyde.com"
-baseurl: ""
+url: "https://jandhyde.github.io"
+baseurl: "/jandhyde-site"
 
 markdown: kramdown
 kramdown:
