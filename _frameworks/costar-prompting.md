@@ -10,11 +10,11 @@ one_line: "A six-part scaffold for writing prompts that turns vague asks into st
 
 ## What it's about
 
-COSTAR is a structure for prompt-writing that asks you to specify, in order: Context, Objective, Style, Tone, Audience, and Response format. The point isn't the acronym -- the point is that most people skip three or four of those six things when they prompt, and the model fills in the gap by guessing.
+COSTAR is a structure for prompt-writing that asks you to specify, in order: Context, Objective, Style, Tone, Audience, and Response format. Most people skip three or four of those six things when they prompt, and the model fills in the gap by guessing.
 
 ## What stuck
 
-The realization that "Context" and "Response format" are the two pieces almost everyone skips. People will write a paragraph of objective and then forget to say who the output is for or what shape it should take. The model produces something generic, the person blames the model, and the loop continues.
+People will write a paragraph of objective and then forget to say who the output is for or what shape it should take. The model produces something generic, the person blames the model, and the loop continues.
 
 Once I started forcing myself through all six, I noticed that about half the time the act of writing the prompt was the actual work. By the time I'd specified audience and response format, I'd done enough of the thinking that the model's output was just final assembly.
 

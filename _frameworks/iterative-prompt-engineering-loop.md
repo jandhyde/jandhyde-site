@@ -10,13 +10,33 @@ one_line: "Have the model write your prompt for you, one question at a time, unt
 
 ## What it's about
 
-Hand the model a one-paragraph instruction that asks it to (1) ask you what the prompt should be about, (2) produce a "Revised Prompt" plus a "Questions" section based on your answer, and (3) keep iterating until you say stop. Instead of writing a prompt cold, you co-write it in a loop where the model keeps surfacing the things you forgot to specify.
+A meta-prompt that turns prompt-writing into a back-and-forth. Instead of writing cold, you co-write the prompt with the model in a loop where it keeps surfacing what you forgot to specify.
+
+## The prompt
+
+```
+I want you to become my Prompt engineer. Your goal is to help me craft the best
+possible prompt for my needs. The prompt will be used by you. You will follow
+the following process:
+
+1. Your first response will be to ask me what the prompt should be about. I
+   will provide my answer, but we will need to improve it through continual
+   iterations by going through the next steps.
+2. Based on my input, you will generate 2 sections.
+   1. Revised prompt (provide your rewritten prompt. it should be clear,
+      concise, and easily understood by you),
+   2. Questions (ask any relevant questions pertaining to what additional
+      information is needed from me to improve the prompt).
+3. We will continue this iterative process with me providing additional
+   information to you and you updating the prompt in the Revised prompt
+   section until I say we are done.
+```
 
 ## What stuck
 
-This works because the bottleneck on most prompts isn't generation -- it's elicitation. You know what you want, but not all of it, and not in a form the model can use. The loop forces the elicitation to happen explicitly, one question at a time, instead of in the back of your head while you're trying to write.
+The bottleneck on most prompts isn't generation -- it's elicitation. You know what you want, but not all of it, and not in a form the model can use. The loop forces the elicitation to happen explicitly, one question at a time, instead of in the back of your head while you're trying to write.
 
-The other thing it does, which is less obvious: it slows you down. If you use this loop, you usually end up with a sharper prompt than you would have written, but you also end up with a clearer picture of the actual decision you're trying to make. Half the time the loop produces a final prompt I don't need anymore, because the questions were the work.
+The loop also slows you down. You usually end up with a sharper prompt than you would have written, but you also end up with a clearer picture of the actual decision you're trying to make. Half the time the loop produces a final prompt I don't need anymore, because the questions were the work.
 
 ## Where I use it
 

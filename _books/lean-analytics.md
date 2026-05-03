@@ -20,6 +20,6 @@ The other thing that stuck: the metrics hierarchy is supposed to change as the b
 
 ## Where I use it
 
-Mostly when somebody hands me a request that's really an unstated decision. "Can you build a dashboard that shows X?" usually means "I want to feel better about X" or "I'm going to argue for Y in a meeting and I need a chart." Lean Analytics gave me a habit of asking what decision the data is supposed to support before I touch it. If there's no decision behind the request, the dashboard is theater.
+Mostly when somebody hands me a request that's really an unstated decision. "Can you build a dashboard that shows X?" usually means "I want to feel better about X" or "I'm going to argue for Y in a meeting and I need a chart." Croll's "what will I do differently based on this information?" became my filter for these. If there's no decision behind the request, the dashboard is theater.
 
-I also use the One Metric That Matters framing when scoping work for a team. If we can't agree on the one metric for the next quarter, we're going to drift. If we can, the rest of the prioritization work gets a lot easier.
+The other use that stuck was applying the Lean Canvas to my own role rather than to the company. Treating an internal function as a business -- internal customers, an unfair advantage worth naming, metrics tied to whether anyone actually adopts what I build -- changes what counts as the work. The line that made it click was the throwaway that your job is to de-risk a business model, not build a product. Applied to internal work and not just startups, that's a different job description than I had been operating from.
