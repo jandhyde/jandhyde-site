@@ -14,8 +14,8 @@ Roberge built and scaled HubSpot's sales organization and wrote up the playbook.
 
 ## What stuck
 
-TODO. The book has a lot of specific advice; pick the parts that genuinely affected how you think, not the parts that are interesting trivia.
+TODO
 
 ## Where I use it
 
-TODO. If you don't actually use it, this entry shouldn't go up -- per the don't-fabricate rule. If the book was interesting but not load-bearing for any of your work, leave it off the site.
+TODO

@@ -14,8 +14,8 @@ Knaflic's argument is that data presentations fail not because the data is bad b
 
 ## What stuck
 
-TODO -- this section is what makes the entry yours. Pick the one or two rules that actually changed how you build a chart. Don't list all of them. Candidates from the book: "remove everything that doesn't earn its keep," focus on a single takeaway per slide, the argument against pie charts, the effective use of preattentive attributes. Pick the one or two you actually apply.
+TODO
 
 ## Where I use it
 
-TODO -- a real example or two. Probably something about cleaning up a recurring report or stripping down an executive deck.
+TODO

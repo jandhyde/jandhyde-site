@@ -1,5 +1,6 @@
 ---
 layout: entry
+published: false
 title: "The Checklist Manifesto"
 author: "Atul Gawande"
 slug: checklist-manifesto
