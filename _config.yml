@@ -1,5 +1,5 @@
 title: jhyde
-description: "Books, frameworks, and tools that have shaped how I work."
+description: "Projects I've built -- the problem, what I did, and what came out."
 url: "https://jandhyde.github.io"
 baseurl: "/jandhyde-site"
 
@@ -12,15 +12,9 @@ kramdown:
 permalink: /:slug/
 
 collections:
-  books:
+  projects:
     output: true
-    permalink: /library/:slug/
-  frameworks:
-    output: true
-    permalink: /frameworks/:slug/
-  channels:
-    output: true
-    permalink: /watching/:slug/
+    permalink: /projects/:slug/
 
 defaults:
   - scope:
@@ -29,26 +23,10 @@ defaults:
     values:
       layout: "default"
   - scope:
-      path: "_posts"
-      type: "posts"
-    values:
-      layout: "post"
-      permalink: /notes/:title/
-  - scope:
       path: ""
-      type: "books"
+      type: "projects"
     values:
-      layout: "entry"
-  - scope:
-      path: ""
-      type: "frameworks"
-    values:
-      layout: "entry"
-  - scope:
-      path: ""
-      type: "channels"
-    values:
-      layout: "entry"
+      layout: "project"
 
 plugins:
   - jekyll-seo-tag

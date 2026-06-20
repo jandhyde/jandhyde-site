@@ -9,8 +9,7 @@ layout: default
   </div>
 </section>
 
-{% assign all_entries = site.books | concat: site.frameworks | concat: site.channels %}
-{% assign sorted_entries = all_entries | sort: "date_added" | reverse %}
+{% assign sorted_entries = site.projects | sort: "date_added" | reverse %}
 
 {% if sorted_entries.size > 0 %}
 <section class="recent">
