@@ -2,11 +2,10 @@
 layout: project
 title: "Agentforce (AI-201) study system"
 slug: agentforce
-date_added: 2026-06-19
+date_added: 2026-07-26
 status: shipped
 tags: [learning-systems, enablement, ai]
 one_line: "A self-built, blueprint-weighted study system for the Salesforce Agentforce Specialist exam."
-published: false
 ---
 
 **The problem.** The official curriculum for the exam is spread across dozens of Trailhead modules and Help docs, with no single view and no weighting toward what the exam actually tests. Studying it front to back spends as much effort on a 5%-weighted domain as on a 35% one.
